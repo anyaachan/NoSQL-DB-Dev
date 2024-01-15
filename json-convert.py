@@ -4,20 +4,20 @@ import os
 def read_all_json_files(folder_path):
     data = {}
     for file in os.listdir(folder_path):
-        if file.endswith('.json'):
+        if file.endswith(".json"):
             file_path = os.path.join(folder_path, file)
-            with open(file_path, 'r') as json_file:
-                # The file name without extension will be the key
+            with open(file_path, "r") as json_file:
+                # The file name will be the key
                 key = os.path.splitext(file)[0]
                 data[key] = json.load(json_file)
     return data
 
 # Usage
-data = read_all_json_files("/Users/anna-alexandradanchenko/Documents/University/Second Year/Rel&NoSQL/Tables-JSON")
+data = read_all_json_files("Tables-JSON")
 
-animals_data = data.get('animal', None)
-parent_child_data = data.get('parent_child', None)
-feedings_data = data.get('animal_feeding', None)
+animals_data = data.get("animal", None)
+parent_child_data = data.get("parent_child", None)
+feedings_data = data.get("animal_feeding", None)
 
 # Creating a generic function which will filter entries by "foreign key" (filter key) specified. 
 def get_filtered_data(filter_key, filter_value, data, attributes):
@@ -28,6 +28,7 @@ def get_filtered_data(filter_key, filter_value, data, attributes):
             filtered_data.append(filtered_entry)
     return filtered_data
 
+### TRANSFORM ANIMAL DATA ###
 def transform_animal_data(animals_data, parent_child_data, feedings_data):
     transformed_data = []
     for animal in animals_data:
@@ -36,6 +37,7 @@ def transform_animal_data(animals_data, parent_child_data, feedings_data):
             "sex": animal["sex"],
             "birth_date": animal["birth_date"],
             "name": animal["name"],
+            "enclosure": animal["enclosure_id"],
             "species": {"binominal_name": animal["binominal_name"]},
             "parent": get_filtered_data("animal_id", animal["animal_id"], parent_child_data, ["animal_parent_id", "parenting_type"]),
             "feedings":  get_filtered_data("animal_id", animal["animal_id"], feedings_data, ["employee_id", "timestamp"])
@@ -47,9 +49,9 @@ transformed_animals = transform_animal_data(animals_data, parent_child_data, fee
 print(transformed_animals)
 
 
-# ### GODPARENT DATA ###
-godparent_data = data.get('godparent', None)
-animal_godparent_data = data.get('animal_godparent', None)
+### TRANSFORM GODPARENT DATA ###
+godparent_data = data.get("godparent", None)
+animal_godparent_data = data.get("animal_godparent", None)
 
 def transform_godparent_data(godparent_data, animal_godparent_data):
     transformed_data = []
@@ -68,3 +70,47 @@ def transform_godparent_data(godparent_data, animal_godparent_data):
 
 transformed_godparent = transform_godparent_data(godparent_data, animal_godparent_data)
 print(transformed_godparent)
+
+### TRANSFORM EMPLOYEE DATA ###
+employee_data = data.get("employee", None)
+zoo_keeper_data = data.get("zoo_keeper", None)
+security_guard_data = data.get("security_guard", None)
+
+
+def transform_employee_data(employee_data, zoo_keeper_data, security_guard_data):
+    transformed_data = []
+    for entry in employee_data:
+        transformed_employee = {
+            "employee_id": entry["employee_id"],
+            "phone": entry["phone"],
+            "email": entry["email"],
+            "name": entry["name"],
+            "surname": entry["surname"],
+            "role": get_employee_role(entry["employee_id"], zoo_keeper_data, security_guard_data)
+        }
+        transformed_data.append(transformed_employee)
+    return transformed_data
+
+def get_employee_role(employee_id, zoo_keeper_data, security_guard_data):
+    for entry in zoo_keeper_data:
+        if entry["employee_id"] == employee_id:
+            transformed_zoo_keeper = {
+                "role_name": "zoo_keeper", 
+                "animals_specialization": entry["animals_specialization"]
+                }
+            return transformed_zoo_keeper
+
+    for entry in security_guard_data:
+        if entry["employee_id"] == employee_id:
+            transformed_security_guard = {
+                "role_name": "security_guard", 
+                "security_level": entry["security_level"],
+                "emergency_role": entry["emergency_role"]
+                }
+            return transformed_security_guard
+        
+    return None #If there is no role assigned for the employee
+ 
+transformed_employee = transform_employee_data(employee_data, zoo_keeper_data, security_guard_data)
+print(transformed_employee)
+### TRANSFORM ENCLOSURE DATA ###

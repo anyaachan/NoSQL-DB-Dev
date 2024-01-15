@@ -1,0 +1,258 @@
+[
+  {
+    "animal_id": 1,
+    "enclosure_id": 1,
+    "binominal_name": "Panthera leo",
+    "sex": "M",
+    "birth_date": "2013-06-10",
+    "name": "Simba"
+  },
+  {
+    "animal_id": 2,
+    "enclosure_id": 6,
+    "binominal_name": "Ailuropoda melanoleuca",
+    "sex": "F",
+    "birth_date": "2013-04-23",
+    "name": "Penny"
+  },
+  {
+    "animal_id": 3,
+    "enclosure_id": 15,
+    "binominal_name": "Giraffa camelopardalis",
+    "sex": "M",
+    "birth_date": "2023-09-11",
+    "name": "Gerry"
+  },
+  {
+    "animal_id": 4,
+    "enclosure_id": 7,
+    "binominal_name": "Elephas maximus",
+    "sex": "F",
+    "birth_date": "2018-12-05",
+    "name": "Ella"
+  },
+  {
+    "animal_id": 5,
+    "enclosure_id": 2,
+    "binominal_name": "Panthera tigris",
+    "sex": "M",
+    "birth_date": "2014-05-20",
+    "name": "Rajah"
+  },
+  {
+    "animal_id": 6,
+    "enclosure_id": 17,
+    "binominal_name": "Equus zebra",
+    "sex": "F",
+    "birth_date": "2019-03-18",
+    "name": "Zara"
+  },
+  {
+    "animal_id": 7,
+    "enclosure_id": 18,
+    "binominal_name": "Ursus maritimus",
+    "sex": "M",
+    "birth_date": "2015-11-25",
+    "name": "Bjorn"
+  },
+  {
+    "animal_id": 8,
+    "enclosure_id": 23,
+    "binominal_name": "Cervus elaphus",
+    "sex": "F",
+    "birth_date": "2018-06-15",
+    "name": "Daisy"
+  },
+  {
+    "animal_id": 9,
+    "enclosure_id": 28,
+    "binominal_name": "Phoenicopterus roseus",
+    "sex": "M",
+    "birth_date": "2016-04-10",
+    "name": "Felix"
+  },
+  {
+    "animal_id": 10,
+    "enclosure_id": 8,
+    "binominal_name": "Panthera leo",
+    "sex": "F",
+    "birth_date": "2003-07-21",
+    "name": "Nala"
+  },
+  {
+    "animal_id": 11,
+    "enclosure_id": 15,
+    "binominal_name": "Ailuropoda melanoleuca",
+    "sex": "M",
+    "birth_date": "2018-08-30",
+    "name": "Bamboo"
+  },
+  {
+    "animal_id": 12,
+    "enclosure_id": 21,
+    "binominal_name": "Giraffa camelopardalis",
+    "sex": "F",
+    "birth_date": "2016-11-05",
+    "name": "Gigi"
+  },
+  {
+    "animal_id": 13,
+    "enclosure_id": 2,
+    "binominal_name": "Elephas maximus",
+    "sex": "M",
+    "birth_date": "2015-09-17",
+    "name": "Zumbo"
+  },
+  {
+    "animal_id": 14,
+    "enclosure_id": 1,
+    "binominal_name": "Panthera leo",
+    "sex": "F",
+    "birth_date": "2016-02-14",
+    "name": "Layla"
+  },
+  {
+    "animal_id": 15,
+    "enclosure_id": 15,
+    "binominal_name": "Giraffa camelopardalis",
+    "sex": "F",
+    "birth_date": "2016-01-18",
+    "name": "Grace"
+  },
+  {
+    "animal_id": 16,
+    "enclosure_id": 7,
+    "binominal_name": "Elephas maximus",
+    "sex": "M",
+    "birth_date": "2003-05-22",
+    "name": "Max"
+  },
+  {
+    "animal_id": 17,
+    "enclosure_id": 19,
+    "binominal_name": "Panthera leo",
+    "sex": "M",
+    "birth_date": "2021-08-12",
+    "name": "Leo"
+  },
+  {
+    "animal_id": 18,
+    "enclosure_id": 3,
+    "binominal_name": "Ara macao",
+    "sex": "M",
+    "birth_date": "2018-05-10",
+    "name": "Blu"
+  },
+  {
+    "animal_id": 19,
+    "enclosure_id": 20,
+    "binominal_name": "Paracheirodon innesi",
+    "sex": "F",
+    "birth_date": "2020-07-21",
+    "name": "Nea"
+  },
+  {
+    "animal_id": 20,
+    "enclosure_id": 24,
+    "binominal_name": "Ara macao",
+    "sex": "F",
+    "birth_date": "2019-03-15",
+    "name": "Ruby"
+  },
+  {
+    "animal_id": 21,
+    "enclosure_id": 25,
+    "binominal_name": "Paracheirodon innesi",
+    "sex": "M",
+    "birth_date": "2021-02-11",
+    "name": "Finn"
+  },
+  {
+    "animal_id": 22,
+    "enclosure_id": 5,
+    "binominal_name": "Pterophyllum scalare",
+    "sex": "M",
+    "birth_date": "2019-05-14",
+    "name": "Angel"
+  },
+  {
+    "animal_id": 23,
+    "enclosure_id": 10,
+    "binominal_name": "Carassius auratus",
+    "sex": "F",
+    "birth_date": "2018-07-22",
+    "name": "Goldie"
+  },
+  {
+    "animal_id": 24,
+    "enclosure_id": 30,
+    "binominal_name": "Betula pendula",
+    "sex": "M",
+    "birth_date": "2020-06-11",
+    "name": "Birch"
+  },
+  {
+    "animal_id": 25,
+    "enclosure_id": 9,
+    "binominal_name": "Calidris alpina",
+    "sex": "F",
+    "birth_date": "2017-09-05",
+    "name": "Dunnie"
+  },
+  {
+    "animal_id": 26,
+    "enclosure_id": 4,
+    "binominal_name": "Agalychnis callidryas",
+    "sex": "M",
+    "birth_date": "2018-03-12",
+    "name": "Red"
+  },
+  {
+    "animal_id": 27,
+    "enclosure_id": 14,
+    "binominal_name": "Dendrobates tinctorius",
+    "sex": "F",
+    "birth_date": "2019-04-17",
+    "name": "Dart"
+  },
+  {
+    "animal_id": 28,
+    "enclosure_id": 3,
+    "binominal_name": "Chloropsis cochinchinensis",
+    "sex": "M",
+    "birth_date": "2017-11-23",
+    "name": "Greenie"
+  },
+  {
+    "animal_id": 29,
+    "enclosure_id": 8,
+    "binominal_name": "Lophura leucomelanos",
+    "sex": "F",
+    "birth_date": "2020-01-20",
+    "name": "Kalij"
+  },
+  {
+    "animal_id": 30,
+    "enclosure_id": 11,
+    "binominal_name": "Aphyosemion australe",
+    "sex": "M",
+    "birth_date": "2022-12-10",
+    "name": "May"
+  },
+  {
+    "animal_id": 31,
+    "enclosure_id": 11,
+    "binominal_name": "Aphyosemion australe",
+    "sex": "F",
+    "birth_date": "2021-07-15",
+    "name": "Lyre"
+  },
+  {
+    "animal_id": 32,
+    "enclosure_id": 7,
+    "binominal_name": "Elephas maximus",
+    "sex": "F",
+    "birth_date": "1999-12-20",
+    "name": "Ellaria"
+  }
+]
