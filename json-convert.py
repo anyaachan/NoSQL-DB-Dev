@@ -46,7 +46,7 @@ def transform_animal_data(animals_data, parent_child_data, feedings_data):
     return transformed_data
 
 transformed_animals = transform_animal_data(animals_data, parent_child_data, feedings_data)
-print(transformed_animals)
+#print(transformed_animals)
 
 
 ### TRANSFORM GODPARENT DATA ###
@@ -69,7 +69,7 @@ def transform_godparent_data(godparent_data, animal_godparent_data):
 
 
 transformed_godparent = transform_godparent_data(godparent_data, animal_godparent_data)
-print(transformed_godparent)
+#print(transformed_godparent)
 
 ### TRANSFORM EMPLOYEE DATA ###
 employee_data = data.get("employee", None)
@@ -112,5 +112,36 @@ def get_employee_role(employee_id, zoo_keeper_data, security_guard_data):
     return None #If there is no role assigned for the employee
  
 transformed_employee = transform_employee_data(employee_data, zoo_keeper_data, security_guard_data)
-print(transformed_employee)
-### TRANSFORM ENCLOSURE DATA ###
+#print(transformed_employee)
+
+### TRANSFORM SECTION DATA ###
+
+section_data = data.get("section", None)
+security_shifts_data = data.get("security_shift", None)
+enclosure_data = data.get("enclosure", None)
+enclosure_type_data = data.get("enclosure_type", None)
+
+def transform_section_data(section_data, enclosure_data, security_shifts_data):
+    transformed_data = []
+    for entry in section_data:
+        transformed_section = {
+            "section_name": entry["section_name"],
+            "enclosures": get_filtered_data("section_name", entry["section_name"], enclosure_data, ["enclosure_id", "capacity", "type_name"]),
+            "security_shifts": get_filtered_data("section_name", entry["section_name"], security_shifts_data, ["employee_id", "date"])
+        }
+        transformed_data.append(transformed_section)
+    return transformed_data
+
+transformed_section = transform_section_data(section_data, enclosure_data, security_shifts_data)
+#print(transformed_section)
+
+for_export = [transformed_godparent, transformed_animals, transformed_employee, transformed_section]
+export_names = ["godparent", "animal", "employee", "section"]
+
+def export_to_files(for_export, export_names, folder_path):
+    for dataset, name in zip(for_export, export_names):
+        file_path = os.path.join(folder_path, f"{name}.json")
+        with open(file_path, 'w') as json_file:
+            json.dump(dataset, json_file, indent=4)
+
+export_to_files(for_export, export_names, "JSON-transformed")

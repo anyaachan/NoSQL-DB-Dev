@@ -1,0 +1,151 @@
+[
+    {
+        "employee_id": 1,
+        "phone": "555-1234",
+        "email": "alice.j@example.com",
+        "name": "Alice",
+        "surname": "Johnson",
+        "role": {
+            "role_name": "zoo_keeper",
+            "animals_specialization": "Mammals"
+        }
+    },
+    {
+        "employee_id": 2,
+        "phone": "555-5678",
+        "email": "bob.s@example.com",
+        "name": "Bob",
+        "surname": "Smith",
+        "role": {
+            "role_name": "zoo_keeper",
+            "animals_specialization": "Birds"
+        }
+    },
+    {
+        "employee_id": 3,
+        "phone": "555-6789",
+        "email": "emma.w@example.com",
+        "name": "Emma",
+        "surname": "Williams",
+        "role": {
+            "role_name": "zoo_keeper",
+            "animals_specialization": "Reptiles"
+        }
+    },
+    {
+        "employee_id": 4,
+        "phone": "555-7890",
+        "email": "james.b@example.com",
+        "name": "James",
+        "surname": "Brown",
+        "role": {
+            "role_name": "zoo_keeper",
+            "animals_specialization": "Amphibians"
+        }
+    },
+    {
+        "employee_id": 5,
+        "phone": "555-8901",
+        "email": "liam.w@example.com",
+        "name": "Liam",
+        "surname": "Wilson",
+        "role": {
+            "role_name": "zoo_keeper",
+            "animals_specialization": "Fish"
+        }
+    },
+    {
+        "employee_id": 6,
+        "phone": "555-9012",
+        "email": "olivia.t@example.com",
+        "name": "Olivia",
+        "surname": "Taylor",
+        "role": {
+            "role_name": "zoo_keeper",
+            "animals_specialization": "Mammals"
+        }
+    },
+    {
+        "employee_id": 7,
+        "phone": "555-0123",
+        "email": "noah.a@example.com",
+        "name": "Noah",
+        "surname": "Anderson",
+        "role": {
+            "role_name": "zoo_keeper",
+            "animals_specialization": "Birds"
+        }
+    },
+    {
+        "employee_id": 8,
+        "phone": "555-9101",
+        "email": "charlie.b@example.com",
+        "name": "Charlie",
+        "surname": "Brown",
+        "role": {
+            "role_name": "security_guard",
+            "security_level": "Intermediate",
+            "emergency_role": "Fire Safety"
+        }
+    },
+    {
+        "employee_id": 9,
+        "phone": "555-1122",
+        "email": "diana.p@example.com",
+        "name": "Diana",
+        "surname": "Prince",
+        "role": {
+            "role_name": "security_guard",
+            "security_level": "Entry",
+            "emergency_role": "First Aid"
+        }
+    },
+    {
+        "employee_id": 10,
+        "phone": "555-2233",
+        "email": "lucas.m@example.com",
+        "name": "Lucas",
+        "surname": "Miller",
+        "role": {
+            "role_name": "security_guard",
+            "security_level": "Advanced",
+            "emergency_role": "Crisis Management"
+        }
+    },
+    {
+        "employee_id": 11,
+        "phone": "555-3344",
+        "email": "sophia.d@example.com",
+        "name": "Sophia",
+        "surname": "Davis",
+        "role": {
+            "role_name": "security_guard",
+            "security_level": "Intermediate",
+            "emergency_role": "Surveillance"
+        }
+    },
+    {
+        "employee_id": 12,
+        "phone": "555-4455",
+        "email": "mia.h@example.com",
+        "name": "Mia",
+        "surname": "Harris",
+        "role": {
+            "role_name": "security_guard",
+            "security_level": "Entry",
+            "emergency_role": "Public Relations"
+        }
+    },
+    {
+        "employee_id": 13,
+        "phone": "555-5566",
+        "email": "ethan.c@example.com",
+        "name": "Ethan",
+        "surname": "Clark",
+        "role": {
+            "role_name": "security_guard",
+            "security_level": "Intermediate",
+            "emergency_role": "Emergency Evacuation"
+        }
+    }
+]

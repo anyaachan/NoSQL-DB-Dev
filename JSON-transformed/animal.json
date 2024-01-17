@@ -1,0 +1,581 @@
+[
+    {
+        "animal_id": 1,
+        "sex": "M",
+        "birth_date": "2013-06-10",
+        "name": "Simba",
+        "enclosure": 1,
+        "species": {
+            "binominal_name": "Panthera leo"
+        },
+        "parent": [
+            {
+                "animal_parent_id": 10,
+                "parenting_type": "Biological"
+            }
+        ],
+        "feedings": [
+            {
+                "employee_id": 1,
+                "timestamp": "2023-12-01 08:30:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 2,
+        "sex": "F",
+        "birth_date": "2013-04-23",
+        "name": "Penny",
+        "enclosure": 6,
+        "species": {
+            "binominal_name": "Ailuropoda melanoleuca"
+        },
+        "parent": [],
+        "feedings": [
+            {
+                "employee_id": 6,
+                "timestamp": "2023-12-01 10:00:00.000000"
+            },
+            {
+                "employee_id": 6,
+                "timestamp": "2023-12-01 20:00:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 3,
+        "sex": "M",
+        "birth_date": "2023-09-11",
+        "name": "Gerry",
+        "enclosure": 15,
+        "species": {
+            "binominal_name": "Giraffa camelopardalis"
+        },
+        "parent": [
+            {
+                "animal_parent_id": 15,
+                "parenting_type": "Biological"
+            }
+        ],
+        "feedings": [
+            {
+                "employee_id": 6,
+                "timestamp": "2023-12-02 08:45:00.000000"
+            },
+            {
+                "employee_id": 6,
+                "timestamp": "2023-12-04 09:15:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 4,
+        "sex": "F",
+        "birth_date": "2018-12-05",
+        "name": "Ella",
+        "enclosure": 7,
+        "species": {
+            "binominal_name": "Elephas maximus"
+        },
+        "parent": [
+            {
+                "animal_parent_id": 16,
+                "parenting_type": "Biological"
+            }
+        ],
+        "feedings": [
+            {
+                "employee_id": 6,
+                "timestamp": "2023-12-02 09:30:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 5,
+        "sex": "M",
+        "birth_date": "2014-05-20",
+        "name": "Rajah",
+        "enclosure": 2,
+        "species": {
+            "binominal_name": "Panthera tigris"
+        },
+        "parent": [],
+        "feedings": [
+            {
+                "employee_id": 1,
+                "timestamp": "2023-12-01 11:00:00.000000"
+            },
+            {
+                "employee_id": 1,
+                "timestamp": "2023-12-04 08:45:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 6,
+        "sex": "F",
+        "birth_date": "2019-03-18",
+        "name": "Zara",
+        "enclosure": 17,
+        "species": {
+            "binominal_name": "Equus zebra"
+        },
+        "parent": [],
+        "feedings": [
+            {
+                "employee_id": 1,
+                "timestamp": "2023-12-01 13:00:00.000000"
+            },
+            {
+                "employee_id": 1,
+                "timestamp": "2023-12-05 14:00:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 7,
+        "sex": "M",
+        "birth_date": "2015-11-25",
+        "name": "Bjorn",
+        "enclosure": 18,
+        "species": {
+            "binominal_name": "Ursus maritimus"
+        },
+        "parent": [],
+        "feedings": [
+            {
+                "employee_id": 6,
+                "timestamp": "2023-12-02 11:00:00.000000"
+            },
+            {
+                "employee_id": 1,
+                "timestamp": "2023-12-03 15:30:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 8,
+        "sex": "F",
+        "birth_date": "2018-06-15",
+        "name": "Daisy",
+        "enclosure": 23,
+        "species": {
+            "binominal_name": "Cervus elaphus"
+        },
+        "parent": [],
+        "feedings": [
+            {
+                "employee_id": 2,
+                "timestamp": "2023-12-04 10:30:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 9,
+        "sex": "M",
+        "birth_date": "2016-04-10",
+        "name": "Felix",
+        "enclosure": 28,
+        "species": {
+            "binominal_name": "Phoenicopterus roseus"
+        },
+        "parent": [],
+        "feedings": [
+            {
+                "employee_id": 2,
+                "timestamp": "2023-12-05 09:00:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 10,
+        "sex": "F",
+        "birth_date": "2003-07-21",
+        "name": "Nala",
+        "enclosure": 8,
+        "species": {
+            "binominal_name": "Panthera leo"
+        },
+        "parent": [],
+        "feedings": [
+            {
+                "employee_id": 1,
+                "timestamp": "2023-12-03 16:15:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 11,
+        "sex": "M",
+        "birth_date": "2018-08-30",
+        "name": "Bamboo",
+        "enclosure": 15,
+        "species": {
+            "binominal_name": "Ailuropoda melanoleuca"
+        },
+        "parent": [
+            {
+                "animal_parent_id": 2,
+                "parenting_type": "Adoptive"
+            }
+        ],
+        "feedings": [
+            {
+                "employee_id": 1,
+                "timestamp": "2023-12-02 12:00:00.000000"
+            },
+            {
+                "employee_id": 6,
+                "timestamp": "2023-12-04 13:45:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 12,
+        "sex": "F",
+        "birth_date": "2016-11-05",
+        "name": "Gigi",
+        "enclosure": 21,
+        "species": {
+            "binominal_name": "Giraffa camelopardalis"
+        },
+        "parent": [],
+        "feedings": [
+            {
+                "employee_id": 6,
+                "timestamp": "2023-12-01 10:30:00.000000"
+            },
+            {
+                "employee_id": 6,
+                "timestamp": "2023-12-05 08:30:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 13,
+        "sex": "M",
+        "birth_date": "2015-09-17",
+        "name": "Zumbo",
+        "enclosure": 2,
+        "species": {
+            "binominal_name": "Elephas maximus"
+        },
+        "parent": [],
+        "feedings": [
+            {
+                "employee_id": 1,
+                "timestamp": "2023-12-02 14:00:00.000000"
+            },
+            {
+                "employee_id": 6,
+                "timestamp": "2023-12-03 12:00:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 14,
+        "sex": "F",
+        "birth_date": "2016-02-14",
+        "name": "Layla",
+        "enclosure": 1,
+        "species": {
+            "binominal_name": "Panthera leo"
+        },
+        "parent": [],
+        "feedings": [
+            {
+                "employee_id": 1,
+                "timestamp": "2023-12-02 09:00:00.000000"
+            },
+            {
+                "employee_id": 1,
+                "timestamp": "2023-12-01 15:00:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 15,
+        "sex": "F",
+        "birth_date": "2016-01-18",
+        "name": "Grace",
+        "enclosure": 15,
+        "species": {
+            "binominal_name": "Giraffa camelopardalis"
+        },
+        "parent": [],
+        "feedings": [
+            {
+                "employee_id": 6,
+                "timestamp": "2023-12-02 08:30:00.000000"
+            },
+            {
+                "employee_id": 6,
+                "timestamp": "2023-12-04 11:00:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 16,
+        "sex": "M",
+        "birth_date": "2003-05-22",
+        "name": "Max",
+        "enclosure": 7,
+        "species": {
+            "binominal_name": "Elephas maximus"
+        },
+        "parent": [],
+        "feedings": [
+            {
+                "employee_id": 6,
+                "timestamp": "2023-12-05 10:15:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 17,
+        "sex": "M",
+        "birth_date": "2021-08-12",
+        "name": "Leo",
+        "enclosure": 19,
+        "species": {
+            "binominal_name": "Panthera leo"
+        },
+        "parent": [
+            {
+                "animal_parent_id": 1,
+                "parenting_type": "Adoptive"
+            }
+        ],
+        "feedings": [
+            {
+                "employee_id": 1,
+                "timestamp": "2023-12-01 14:30:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 18,
+        "sex": "M",
+        "birth_date": "2018-05-10",
+        "name": "Blu",
+        "enclosure": 3,
+        "species": {
+            "binominal_name": "Ara macao"
+        },
+        "parent": [],
+        "feedings": [
+            {
+                "employee_id": 2,
+                "timestamp": "2023-12-01 15:30:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 19,
+        "sex": "F",
+        "birth_date": "2020-07-21",
+        "name": "Nea",
+        "enclosure": 20,
+        "species": {
+            "binominal_name": "Paracheirodon innesi"
+        },
+        "parent": [],
+        "feedings": []
+    },
+    {
+        "animal_id": 20,
+        "sex": "F",
+        "birth_date": "2019-03-15",
+        "name": "Ruby",
+        "enclosure": 24,
+        "species": {
+            "binominal_name": "Ara macao"
+        },
+        "parent": [],
+        "feedings": [
+            {
+                "employee_id": 2,
+                "timestamp": "2023-12-13 20:00:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 21,
+        "sex": "M",
+        "birth_date": "2021-02-11",
+        "name": "Finn",
+        "enclosure": 25,
+        "species": {
+            "binominal_name": "Paracheirodon innesi"
+        },
+        "parent": [],
+        "feedings": [
+            {
+                "employee_id": 5,
+                "timestamp": "2023-12-01 12:30:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 22,
+        "sex": "M",
+        "birth_date": "2019-05-14",
+        "name": "Angel",
+        "enclosure": 5,
+        "species": {
+            "binominal_name": "Pterophyllum scalare"
+        },
+        "parent": [],
+        "feedings": [
+            {
+                "employee_id": 5,
+                "timestamp": "2023-12-01 16:30:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 23,
+        "sex": "F",
+        "birth_date": "2018-07-22",
+        "name": "Goldie",
+        "enclosure": 10,
+        "species": {
+            "binominal_name": "Carassius auratus"
+        },
+        "parent": [],
+        "feedings": [
+            {
+                "employee_id": 5,
+                "timestamp": "2023-12-02 11:30:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 24,
+        "sex": "M",
+        "birth_date": "2020-06-11",
+        "name": "Birch",
+        "enclosure": 30,
+        "species": {
+            "binominal_name": "Betula pendula"
+        },
+        "parent": [],
+        "feedings": []
+    },
+    {
+        "animal_id": 25,
+        "sex": "F",
+        "birth_date": "2017-09-05",
+        "name": "Dunnie",
+        "enclosure": 9,
+        "species": {
+            "binominal_name": "Calidris alpina"
+        },
+        "parent": [],
+        "feedings": []
+    },
+    {
+        "animal_id": 26,
+        "sex": "M",
+        "birth_date": "2018-03-12",
+        "name": "Red",
+        "enclosure": 4,
+        "species": {
+            "binominal_name": "Agalychnis callidryas"
+        },
+        "parent": [],
+        "feedings": [
+            {
+                "employee_id": 4,
+                "timestamp": "2023-12-02 10:15:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 27,
+        "sex": "F",
+        "birth_date": "2019-04-17",
+        "name": "Dart",
+        "enclosure": 14,
+        "species": {
+            "binominal_name": "Dendrobates tinctorius"
+        },
+        "parent": [],
+        "feedings": []
+    },
+    {
+        "animal_id": 28,
+        "sex": "M",
+        "birth_date": "2017-11-23",
+        "name": "Greenie",
+        "enclosure": 3,
+        "species": {
+            "binominal_name": "Chloropsis cochinchinensis"
+        },
+        "parent": [],
+        "feedings": [
+            {
+                "employee_id": 2,
+                "timestamp": "2023-12-12 09:00:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 29,
+        "sex": "F",
+        "birth_date": "2020-01-20",
+        "name": "Kalij",
+        "enclosure": 8,
+        "species": {
+            "binominal_name": "Lophura leucomelanos"
+        },
+        "parent": [],
+        "feedings": [
+            {
+                "employee_id": 2,
+                "timestamp": "2023-12-01 16:00:00.000000"
+            }
+        ]
+    },
+    {
+        "animal_id": 30,
+        "sex": "M",
+        "birth_date": "2022-12-10",
+        "name": "May",
+        "enclosure": 11,
+        "species": {
+            "binominal_name": "Aphyosemion australe"
+        },
+        "parent": [],
+        "feedings": []
+    },
+    {
+        "animal_id": 31,
+        "sex": "F",
+        "birth_date": "2021-07-15",
+        "name": "Lyre",
+        "enclosure": 11,
+        "species": {
+            "binominal_name": "Aphyosemion australe"
+        },
+        "parent": [],
+        "feedings": []
+    },
+    {
+        "animal_id": 32,
+        "sex": "F",
+        "birth_date": "1999-12-20",
+        "name": "Ellaria",
+        "enclosure": 7,
+        "species": {
+            "binominal_name": "Elephas maximus"
+        },
+        "parent": [],
+        "feedings": [
+            {
+                "employee_id": 6,
+                "timestamp": "2023-12-03 11:30:00.000000"
+            }
+        ]
+    }
+]

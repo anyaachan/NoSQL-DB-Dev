@@ -1,0 +1,387 @@
+[
+    {
+        "section_name": "Asia",
+        "enclosures": [
+            {
+                "enclosure_id": 1,
+                "capacity": 10,
+                "type_name": "Aviary"
+            },
+            {
+                "enclosure_id": 2,
+                "capacity": 2,
+                "type_name": "Cage"
+            },
+            {
+                "enclosure_id": 3,
+                "capacity": 12,
+                "type_name": "Barrier"
+            },
+            {
+                "enclosure_id": 4,
+                "capacity": 7,
+                "type_name": "Terrarium"
+            },
+            {
+                "enclosure_id": 5,
+                "capacity": 15,
+                "type_name": "Aquarium"
+            }
+        ],
+        "security_shifts": [
+            {
+                "employee_id": 8,
+                "date": "2023-12-05"
+            },
+            {
+                "employee_id": 11,
+                "date": "2023-12-06"
+            },
+            {
+                "employee_id": 9,
+                "date": "2023-12-07"
+            },
+            {
+                "employee_id": 13,
+                "date": "2023-12-08"
+            },
+            {
+                "employee_id": 12,
+                "date": "2023-12-10"
+            },
+            {
+                "employee_id": 9,
+                "date": "2023-12-11"
+            },
+            {
+                "employee_id": 13,
+                "date": "2023-12-12"
+            }
+        ]
+    },
+    {
+        "section_name": "Africa",
+        "enclosures": [
+            {
+                "enclosure_id": 6,
+                "capacity": 8,
+                "type_name": "Cage"
+            },
+            {
+                "enclosure_id": 7,
+                "capacity": 4,
+                "type_name": "Barrier"
+            },
+            {
+                "enclosure_id": 8,
+                "capacity": 9,
+                "type_name": "Aviary"
+            },
+            {
+                "enclosure_id": 9,
+                "capacity": 4,
+                "type_name": "Terrarium"
+            },
+            {
+                "enclosure_id": 10,
+                "capacity": 10,
+                "type_name": "Aquarium"
+            },
+            {
+                "enclosure_id": 31,
+                "capacity": 5,
+                "type_name": "Barrier"
+            }
+        ],
+        "security_shifts": [
+            {
+                "employee_id": 9,
+                "date": "2023-12-05"
+            },
+            {
+                "employee_id": 13,
+                "date": "2023-12-03"
+            },
+            {
+                "employee_id": 12,
+                "date": "2023-12-07"
+            },
+            {
+                "employee_id": 10,
+                "date": "2023-12-08"
+            },
+            {
+                "employee_id": 11,
+                "date": "2023-12-13"
+            },
+            {
+                "employee_id": 11,
+                "date": "2023-12-09"
+            },
+            {
+                "employee_id": 8,
+                "date": "2023-12-10"
+            },
+            {
+                "employee_id": 13,
+                "date": "2023-12-11"
+            },
+            {
+                "employee_id": 12,
+                "date": "2023-12-12"
+            }
+        ]
+    },
+    {
+        "section_name": "Oceanic",
+        "enclosures": [
+            {
+                "enclosure_id": 11,
+                "capacity": 20,
+                "type_name": "Aquarium"
+            },
+            {
+                "enclosure_id": 12,
+                "capacity": 4,
+                "type_name": "Cage"
+            },
+            {
+                "enclosure_id": 13,
+                "capacity": 8,
+                "type_name": "Aviary"
+            },
+            {
+                "enclosure_id": 14,
+                "capacity": 7,
+                "type_name": "Barrier"
+            },
+            {
+                "enclosure_id": 15,
+                "capacity": 6,
+                "type_name": "Terrarium"
+            }
+        ],
+        "security_shifts": [
+            {
+                "employee_id": 11,
+                "date": "2023-12-05"
+            },
+            {
+                "employee_id": 13,
+                "date": "2023-12-06"
+            },
+            {
+                "employee_id": 13,
+                "date": "2023-12-14"
+            },
+            {
+                "employee_id": 12,
+                "date": "2023-12-08"
+            },
+            {
+                "employee_id": 9,
+                "date": "2023-12-10"
+            },
+            {
+                "employee_id": 12,
+                "date": "2023-12-11"
+            },
+            {
+                "employee_id": 10,
+                "date": "2023-12-12"
+            }
+        ]
+    },
+    {
+        "section_name": "North America",
+        "enclosures": [
+            {
+                "enclosure_id": 16,
+                "capacity": 8,
+                "type_name": "Barrier"
+            },
+            {
+                "enclosure_id": 17,
+                "capacity": 10,
+                "type_name": "Cage"
+            },
+            {
+                "enclosure_id": 18,
+                "capacity": 11,
+                "type_name": "Aviary"
+            },
+            {
+                "enclosure_id": 19,
+                "capacity": 14,
+                "type_name": "Aquarium"
+            },
+            {
+                "enclosure_id": 20,
+                "capacity": 5,
+                "type_name": "Terrarium"
+            }
+        ],
+        "security_shifts": [
+            {
+                "employee_id": 13,
+                "date": "2023-12-05"
+            },
+            {
+                "employee_id": 9,
+                "date": "2023-12-06"
+            },
+            {
+                "employee_id": 11,
+                "date": "2023-12-07"
+            },
+            {
+                "employee_id": 8,
+                "date": "2023-12-08"
+            },
+            {
+                "employee_id": 8,
+                "date": "2023-12-09"
+            },
+            {
+                "employee_id": 12,
+                "date": "2023-12-09"
+            },
+            {
+                "employee_id": 10,
+                "date": "2023-12-10"
+            },
+            {
+                "employee_id": 11,
+                "date": "2023-12-11"
+            },
+            {
+                "employee_id": 8,
+                "date": "2023-12-12"
+            }
+        ]
+    },
+    {
+        "section_name": "South America",
+        "enclosures": [
+            {
+                "enclosure_id": 21,
+                "capacity": 5,
+                "type_name": "Terrarium"
+            },
+            {
+                "enclosure_id": 22,
+                "capacity": 10,
+                "type_name": "Aviary"
+            },
+            {
+                "enclosure_id": 23,
+                "capacity": 7,
+                "type_name": "Cage"
+            },
+            {
+                "enclosure_id": 24,
+                "capacity": 9,
+                "type_name": "Barrier"
+            },
+            {
+                "enclosure_id": 25,
+                "capacity": 12,
+                "type_name": "Aquarium"
+            }
+        ],
+        "security_shifts": [
+            {
+                "employee_id": 12,
+                "date": "2023-12-05"
+            },
+            {
+                "employee_id": 8,
+                "date": "2023-12-06"
+            },
+            {
+                "employee_id": 13,
+                "date": "2023-12-07"
+            },
+            {
+                "employee_id": 11,
+                "date": "2023-12-08"
+            },
+            {
+                "employee_id": 13,
+                "date": "2023-12-10"
+            },
+            {
+                "employee_id": 10,
+                "date": "2023-12-11"
+            },
+            {
+                "employee_id": 11,
+                "date": "2023-12-12"
+            }
+        ]
+    },
+    {
+        "section_name": "Australia",
+        "enclosures": [
+            {
+                "enclosure_id": 26,
+                "capacity": 6,
+                "type_name": "Terrarium"
+            },
+            {
+                "enclosure_id": 27,
+                "capacity": 8,
+                "type_name": "Barrier"
+            },
+            {
+                "enclosure_id": 28,
+                "capacity": 9,
+                "type_name": "Aviary"
+            },
+            {
+                "enclosure_id": 29,
+                "capacity": 5,
+                "type_name": "Cage"
+            },
+            {
+                "enclosure_id": 30,
+                "capacity": 10,
+                "type_name": "Aquarium"
+            }
+        ],
+        "security_shifts": [
+            {
+                "employee_id": 12,
+                "date": "2023-12-06"
+            },
+            {
+                "employee_id": 8,
+                "date": "2023-12-07"
+            },
+            {
+                "employee_id": 9,
+                "date": "2023-12-08"
+            },
+            {
+                "employee_id": 9,
+                "date": "2023-12-09"
+            },
+            {
+                "employee_id": 13,
+                "date": "2023-12-09"
+            },
+            {
+                "employee_id": 11,
+                "date": "2023-12-10"
+            },
+            {
+                "employee_id": 8,
+                "date": "2023-12-11"
+            },
+            {
+                "employee_id": 9,
+                "date": "2023-12-12"
+            }
+        ]
+    }
+]

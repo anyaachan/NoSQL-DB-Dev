@@ -1,0 +1,151 @@
+[
+    {
+        "godparent_id": 1,
+        "primary_contact": "john.d@example.com",
+        "name": "John",
+        "surname": "Doe",
+        "secondary_contact": "555-2323",
+        "sponsored_animal": [
+            {
+                "animal_id": 1,
+                "donation_amount": 100,
+                "donation_period": 30
+            }
+        ]
+    },
+    {
+        "godparent_id": 2,
+        "primary_contact": "jane.r@example.com",
+        "name": "Jane",
+        "surname": "Roe",
+        "secondary_contact": "555-3434",
+        "sponsored_animal": [
+            {
+                "animal_id": 2,
+                "donation_amount": 150,
+                "donation_period": 60
+            }
+        ]
+    },
+    {
+        "godparent_id": 3,
+        "primary_contact": "michael.m@example.com",
+        "name": "Michael",
+        "surname": "Miller",
+        "secondary_contact": "555-4545",
+        "sponsored_animal": [
+            {
+                "animal_id": 3,
+                "donation_amount": 200,
+                "donation_period": 100
+            }
+        ]
+    },
+    {
+        "godparent_id": 4,
+        "primary_contact": "sarah.s@example.com",
+        "name": "Sarah",
+        "surname": "Smith",
+        "secondary_contact": "555-5656",
+        "sponsored_animal": [
+            {
+                "animal_id": 4,
+                "donation_amount": 120,
+                "donation_period": 60
+            }
+        ]
+    },
+    {
+        "godparent_id": 5,
+        "primary_contact": "olivia.o@example.com",
+        "name": "Olivia",
+        "surname": "Olsen",
+        "secondary_contact": "555-6767",
+        "sponsored_animal": [
+            {
+                "animal_id": 5,
+                "donation_amount": 130,
+                "donation_period": 150
+            },
+            {
+                "animal_id": 1,
+                "donation_amount": 100,
+                "donation_period": 30
+            },
+            {
+                "animal_id": 19,
+                "donation_amount": 100,
+                "donation_period": 30
+            }
+        ]
+    },
+    {
+        "godparent_id": 6,
+        "primary_contact": "alex.a@example.com",
+        "name": "Alex",
+        "surname": "Anderson",
+        "secondary_contact": "555-7878",
+        "sponsored_animal": []
+    },
+    {
+        "godparent_id": 7,
+        "primary_contact": "emily.e@example.com",
+        "name": "Emily",
+        "surname": "Evans",
+        "secondary_contact": "555-8989",
+        "sponsored_animal": [
+            {
+                "animal_id": 7,
+                "donation_amount": 110,
+                "donation_period": 30
+            },
+            {
+                "animal_id": 27,
+                "donation_amount": 110,
+                "donation_period": 30
+            }
+        ]
+    },
+    {
+        "godparent_id": 8,
+        "primary_contact": "daniel.d@example.com",
+        "name": "Daniel",
+        "surname": "Davis",
+        "secondary_contact": "555-1010",
+        "sponsored_animal": [
+            {
+                "animal_id": 8,
+                "donation_amount": 160,
+                "donation_period": 90
+            }
+        ]
+    },
+    {
+        "godparent_id": 9,
+        "primary_contact": "linda.l@example.com",
+        "name": "Linda",
+        "surname": "Lee",
+        "secondary_contact": "555-1212",
+        "sponsored_animal": [
+            {
+                "animal_id": 9,
+                "donation_amount": 175,
+                "donation_period": 120
+            }
+        ]
+    },
+    {
+        "godparent_id": 10,
+        "primary_contact": "carlos.c@example.com",
+        "name": "Carlos",
+        "surname": "Cruz",
+        "secondary_contact": "555-1313",
+        "sponsored_animal": [
+            {
+                "animal_id": 10,
+                "donation_amount": 150,
+                "donation_period": 80
+            }
+        ]
+    }
+]
