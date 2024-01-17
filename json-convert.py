@@ -38,7 +38,7 @@ def transform_animal_data(animals_data, parent_child_data, feedings_data):
             "birth_date": animal["birth_date"],
             "name": animal["name"],
             "enclosure": animal["enclosure_id"],
-            "species": {"binominal_name": animal["binominal_name"]},
+            "species_binominal_name": animal["binominal_name"],
             "parent": get_filtered_data("animal_id", animal["animal_id"], parent_child_data, ["animal_parent_id", "parenting_type"]),
             "feedings":  get_filtered_data("animal_id", animal["animal_id"], feedings_data, ["employee_id", "timestamp"])
         }

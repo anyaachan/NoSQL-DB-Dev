@@ -5,9 +5,7 @@
         "birth_date": "2013-06-10",
         "name": "Simba",
         "enclosure": 1,
-        "species": {
-            "binominal_name": "Panthera leo"
-        },
+        "species_binominal_name": "Panthera leo",
         "parent": [
             {
                 "animal_parent_id": 10,
@@ -27,9 +25,7 @@
         "birth_date": "2013-04-23",
         "name": "Penny",
         "enclosure": 6,
-        "species": {
-            "binominal_name": "Ailuropoda melanoleuca"
-        },
+        "species_binominal_name": "Ailuropoda melanoleuca",
         "parent": [],
         "feedings": [
             {
@@ -48,9 +44,7 @@
         "birth_date": "2023-09-11",
         "name": "Gerry",
         "enclosure": 15,
-        "species": {
-            "binominal_name": "Giraffa camelopardalis"
-        },
+        "species_binominal_name": "Giraffa camelopardalis",
         "parent": [
             {
                 "animal_parent_id": 15,
@@ -74,9 +68,7 @@
         "birth_date": "2018-12-05",
         "name": "Ella",
         "enclosure": 7,
-        "species": {
-            "binominal_name": "Elephas maximus"
-        },
+        "species_binominal_name": "Elephas maximus",
         "parent": [
             {
                 "animal_parent_id": 16,
@@ -96,9 +88,7 @@
         "birth_date": "2014-05-20",
         "name": "Rajah",
         "enclosure": 2,
-        "species": {
-            "binominal_name": "Panthera tigris"
-        },
+        "species_binominal_name": "Panthera tigris",
         "parent": [],
         "feedings": [
             {
@@ -117,9 +107,7 @@
         "birth_date": "2019-03-18",
         "name": "Zara",
         "enclosure": 17,
-        "species": {
-            "binominal_name": "Equus zebra"
-        },
+        "species_binominal_name": "Equus zebra",
         "parent": [],
         "feedings": [
             {
@@ -138,9 +126,7 @@
         "birth_date": "2015-11-25",
         "name": "Bjorn",
         "enclosure": 18,
-        "species": {
-            "binominal_name": "Ursus maritimus"
-        },
+        "species_binominal_name": "Ursus maritimus",
         "parent": [],
         "feedings": [
             {
@@ -159,9 +145,7 @@
         "birth_date": "2018-06-15",
         "name": "Daisy",
         "enclosure": 23,
-        "species": {
-            "binominal_name": "Cervus elaphus"
-        },
+        "species_binominal_name": "Cervus elaphus",
         "parent": [],
         "feedings": [
             {
@@ -176,9 +160,7 @@
         "birth_date": "2016-04-10",
         "name": "Felix",
         "enclosure": 28,
-        "species": {
-            "binominal_name": "Phoenicopterus roseus"
-        },
+        "species_binominal_name": "Phoenicopterus roseus",
         "parent": [],
         "feedings": [
             {
@@ -193,9 +175,7 @@
         "birth_date": "2003-07-21",
         "name": "Nala",
         "enclosure": 8,
-        "species": {
-            "binominal_name": "Panthera leo"
-        },
+        "species_binominal_name": "Panthera leo",
         "parent": [],
         "feedings": [
             {
@@ -210,9 +190,7 @@
         "birth_date": "2018-08-30",
         "name": "Bamboo",
         "enclosure": 15,
-        "species": {
-            "binominal_name": "Ailuropoda melanoleuca"
-        },
+        "species_binominal_name": "Ailuropoda melanoleuca",
         "parent": [
             {
                 "animal_parent_id": 2,
@@ -236,9 +214,7 @@
         "birth_date": "2016-11-05",
         "name": "Gigi",
         "enclosure": 21,
-        "species": {
-            "binominal_name": "Giraffa camelopardalis"
-        },
+        "species_binominal_name": "Giraffa camelopardalis",
         "parent": [],
         "feedings": [
             {
@@ -257,9 +233,7 @@
         "birth_date": "2015-09-17",
         "name": "Zumbo",
         "enclosure": 2,
-        "species": {
-            "binominal_name": "Elephas maximus"
-        },
+        "species_binominal_name": "Elephas maximus",
         "parent": [],
         "feedings": [
             {
@@ -278,9 +252,7 @@
         "birth_date": "2016-02-14",
         "name": "Layla",
         "enclosure": 1,
-        "species": {
-            "binominal_name": "Panthera leo"
-        },
+        "species_binominal_name": "Panthera leo",
         "parent": [],
         "feedings": [
             {
@@ -299,9 +271,7 @@
         "birth_date": "2016-01-18",
         "name": "Grace",
         "enclosure": 15,
-        "species": {
-            "binominal_name": "Giraffa camelopardalis"
-        },
+        "species_binominal_name": "Giraffa camelopardalis",
         "parent": [],
         "feedings": [
             {
@@ -320,9 +290,7 @@
         "birth_date": "2003-05-22",
         "name": "Max",
         "enclosure": 7,
-        "species": {
-            "binominal_name": "Elephas maximus"
-        },
+        "species_binominal_name": "Elephas maximus",
         "parent": [],
         "feedings": [
             {
@@ -337,9 +305,7 @@
         "birth_date": "2021-08-12",
         "name": "Leo",
         "enclosure": 19,
-        "species": {
-            "binominal_name": "Panthera leo"
-        },
+        "species_binominal_name": "Panthera leo",
         "parent": [
             {
                 "animal_parent_id": 1,
@@ -359,9 +325,7 @@
         "birth_date": "2018-05-10",
         "name": "Blu",
         "enclosure": 3,
-        "species": {
-            "binominal_name": "Ara macao"
-        },
+        "species_binominal_name": "Ara macao",
         "parent": [],
         "feedings": [
             {
@@ -376,9 +340,7 @@
         "birth_date": "2020-07-21",
         "name": "Nea",
         "enclosure": 20,
-        "species": {
-            "binominal_name": "Paracheirodon innesi"
-        },
+        "species_binominal_name": "Paracheirodon innesi",
         "parent": [],
         "feedings": []
     },
@@ -388,9 +350,7 @@
         "birth_date": "2019-03-15",
         "name": "Ruby",
         "enclosure": 24,
-        "species": {
-            "binominal_name": "Ara macao"
-        },
+        "species_binominal_name": "Ara macao",
         "parent": [],
         "feedings": [
             {
@@ -405,9 +365,7 @@
         "birth_date": "2021-02-11",
         "name": "Finn",
         "enclosure": 25,
-        "species": {
-            "binominal_name": "Paracheirodon innesi"
-        },
+        "species_binominal_name": "Paracheirodon innesi",
         "parent": [],
         "feedings": [
             {
@@ -422,9 +380,7 @@
         "birth_date": "2019-05-14",
         "name": "Angel",
         "enclosure": 5,
-        "species": {
-            "binominal_name": "Pterophyllum scalare"
-        },
+        "species_binominal_name": "Pterophyllum scalare",
         "parent": [],
         "feedings": [
             {
@@ -439,9 +395,7 @@
         "birth_date": "2018-07-22",
         "name": "Goldie",
         "enclosure": 10,
-        "species": {
-            "binominal_name": "Carassius auratus"
-        },
+        "species_binominal_name": "Carassius auratus",
         "parent": [],
         "feedings": [
             {
@@ -456,9 +410,7 @@
         "birth_date": "2020-06-11",
         "name": "Birch",
         "enclosure": 30,
-        "species": {
-            "binominal_name": "Betula pendula"
-        },
+        "species_binominal_name": "Betula pendula",
         "parent": [],
         "feedings": []
     },
@@ -468,9 +420,7 @@
         "birth_date": "2017-09-05",
         "name": "Dunnie",
         "enclosure": 9,
-        "species": {
-            "binominal_name": "Calidris alpina"
-        },
+        "species_binominal_name": "Calidris alpina",
         "parent": [],
         "feedings": []
     },
@@ -480,9 +430,7 @@
         "birth_date": "2018-03-12",
         "name": "Red",
         "enclosure": 4,
-        "species": {
-            "binominal_name": "Agalychnis callidryas"
-        },
+        "species_binominal_name": "Agalychnis callidryas",
         "parent": [],
         "feedings": [
             {
@@ -497,9 +445,7 @@
         "birth_date": "2019-04-17",
         "name": "Dart",
         "enclosure": 14,
-        "species": {
-            "binominal_name": "Dendrobates tinctorius"
-        },
+        "species_binominal_name": "Dendrobates tinctorius",
         "parent": [],
         "feedings": []
     },
@@ -509,9 +455,7 @@
         "birth_date": "2017-11-23",
         "name": "Greenie",
         "enclosure": 3,
-        "species": {
-            "binominal_name": "Chloropsis cochinchinensis"
-        },
+        "species_binominal_name": "Chloropsis cochinchinensis",
         "parent": [],
         "feedings": [
             {
@@ -526,9 +470,7 @@
         "birth_date": "2020-01-20",
         "name": "Kalij",
         "enclosure": 8,
-        "species": {
-            "binominal_name": "Lophura leucomelanos"
-        },
+        "species_binominal_name": "Lophura leucomelanos",
         "parent": [],
         "feedings": [
             {
@@ -543,9 +485,7 @@
         "birth_date": "2022-12-10",
         "name": "May",
         "enclosure": 11,
-        "species": {
-            "binominal_name": "Aphyosemion australe"
-        },
+        "species_binominal_name": "Aphyosemion australe",
         "parent": [],
         "feedings": []
     },
@@ -555,9 +495,7 @@
         "birth_date": "2021-07-15",
         "name": "Lyre",
         "enclosure": 11,
-        "species": {
-            "binominal_name": "Aphyosemion australe"
-        },
+        "species_binominal_name": "Aphyosemion australe",
         "parent": [],
         "feedings": []
     },
@@ -567,9 +505,7 @@
         "birth_date": "1999-12-20",
         "name": "Ellaria",
         "enclosure": 7,
-        "species": {
-            "binominal_name": "Elephas maximus"
-        },
+        "species_binominal_name": "Elephas maximus",
         "parent": [],
         "feedings": [
             {
