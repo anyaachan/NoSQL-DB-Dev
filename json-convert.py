@@ -1,5 +1,7 @@
 import json
 import os
+from datetime import datetime
+import bson
 
 def read_all_json_files(folder_path):
     data = {}
@@ -32,14 +34,15 @@ def get_filtered_data(filter_key, filter_value, data, attributes):
 def transform_animal_data(animals_data, parent_child_data, feedings_data):
     transformed_data = []
     for animal in animals_data:
+        year, month, day = animal["birth_date"].split("-")
         transformed_animal = {
             "animal_id": animal["animal_id"], # Adding animal_id so we can reference conviniently 
             "sex": animal["sex"],
-            "birth_date": animal["birth_date"],
+            "birth_date": bson.datetime.datetime(int(year), int(month), int(day)).isoformat(),
             "name": animal["name"],
             "enclosure": animal["enclosure_id"],
             "species_binominal_name": animal["binominal_name"],
-            "parent": get_filtered_data("animal_id", animal["animal_id"], parent_child_data, ["animal_parent_id", "parenting_type"]),
+            "parents": get_filtered_data("animal_id", animal["animal_id"], parent_child_data, ["animal_parent_id", "parenting_type"]),
             "feedings":  get_filtered_data("animal_id", animal["animal_id"], feedings_data, ["employee_id", "timestamp"])
         }
         transformed_data.append(transformed_animal)
@@ -98,7 +101,8 @@ def get_employee_role(employee_id, zoo_keeper_data, security_guard_data):
                 "role_name": "zoo_keeper", 
                 "animals_specialization": entry["animals_specialization"]
                 }
-            return transformed_zoo_keeper
+            if transformed_zoo_keeper:
+                return transformed_zoo_keeper
 
     for entry in security_guard_data:
         if entry["employee_id"] == employee_id:
@@ -107,7 +111,8 @@ def get_employee_role(employee_id, zoo_keeper_data, security_guard_data):
                 "security_level": entry["security_level"],
                 "emergency_role": entry["emergency_role"]
                 }
-            return transformed_security_guard
+            if transformed_security_guard:
+                return transformed_security_guard
         
     return None #If there is no role assigned for the employee
  
