@@ -85,7 +85,7 @@
         "name": "Alex",
         "surname": "Anderson",
         "secondary_contact": "555-7878",
-        "sponsored_animal": []
+        "sponsored_animal": null
     },
     {
         "godparent_id": 7,

@@ -28,7 +28,8 @@ def get_filtered_data(filter_key, filter_value, data, attributes):
         if entry[filter_key] == filter_value:
             filtered_entry = {attr: entry.get(attr) for attr in attributes}
             filtered_data.append(filtered_entry)
-    return filtered_data
+    if filtered_data:
+        return filtered_data
 
 ### TRANSFORM ANIMAL DATA ###
 def transform_animal_data(animals_data, parent_child_data, feedings_data):
@@ -38,7 +39,7 @@ def transform_animal_data(animals_data, parent_child_data, feedings_data):
         transformed_animal = {
             "animal_id": animal["animal_id"], # Adding animal_id so we can reference conviniently 
             "sex": animal["sex"],
-            "birth_date": bson.datetime.datetime(int(year), int(month), int(day)).isoformat(),
+            "birth_date": {"$date": bson.datetime.datetime(int(year), int(month), int(day)).isoformat(timespec="milliseconds") + "Z"} ,
             "name": animal["name"],
             "enclosure": animal["enclosure_id"],
             "species_binominal_name": animal["binominal_name"],
