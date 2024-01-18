@@ -24,12 +24,12 @@ db.createCollection("animal", {
                 "binominal_name": {
                     bsonType: "string"
                 },
-//                "birth_date": {
-//                    anyOf: [
-//                        {bsonType: "date"},
-//                        {bsonType: "null"}
-//                    ]
-//                },
+                "birth_date": {
+                    anyOf: [
+                        {bsonType: "date"},
+                        {bsonType: "null"}
+                    ]
+                },
                 "name": {
                     anyOf: [
                         {bsonType: "string"},

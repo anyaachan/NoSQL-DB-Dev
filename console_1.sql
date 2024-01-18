@@ -1,4 +1,4 @@
-// Select all the employees that work as zoo keepers. Display their animal specialization and information.
+// 1. Select all the employees that work as zoo keepers. Display their animal specialization and information.
 db.getSiblingDB("annadanc").getCollection("employee").aggregate([
   {
     $match: {"role.role_name": {$eq: "zoo_keeper"}}
@@ -25,7 +25,7 @@ db.getSiblingDB("annadanc").getCollection("employee").aggregate([
   }
 ])
 
-//Select all animals that were not fed on December 2, 2023, by checking the absence of a corresponding feeding record on that date.
+//2. Select all animals that were not fed on December 2, 2023, by checking the absence of a corresponding feeding record on that date.
 db.animal.aggregate([
     {
         $project: {
@@ -56,3 +56,115 @@ db.animal.aggregate([
     }
 ])
 
+// 3. Select all animals that reside in the Africa section. In addition to the animal information, output the Enclosure Type and Enclosure ID of each enclosure associated with an animal that resides in the Africa section.
+
+db.animal.aggregate([
+    {
+        $lookup: { // perform a join
+            from: "section",
+            let: {animal_enclosure: "$enclosure"},
+            pipeline: [
+                {$unwind: "$enclosures"}, // deconstruct the array
+                {$match: {$expr: {$eq: ["$enclosures.enclosure_id", "$$animal_enclosure"]}}}, // $expr allows to use $eq expression inside the $match statement
+                {$match: {section_name: "Africa"}}
+            ],
+            as: "section_data"
+        }
+    },
+    {$unwind: "$section_data"}, // filter out the documents with empty arrays
+    {
+        $project: {
+            animal_id: 1,
+            name: 1,
+            species_binominal_name: 1,
+            sex: 1,
+            birth_date: 1,
+            enclosure_id: "$enclosure",
+            enc_type: "$section_data.enclosures.type_name",
+            section_name: "$section_data.section_name"
+        }
+    },
+    {$sort: {"animal_id": 1}}
+])
+
+// 4. Select all zoo keepers that never fed any animal.
+db.employee.aggregate([
+    {
+        $lookup: {
+            from: "animal",
+            localField: "employee_id",
+            foreignField: "feedings.employee_id",
+            as: "feedings"
+        }
+    },
+    {
+        $match: {
+            "role.role_name": "zoo_keeper",
+            "feedings": { $size: 0 }
+        }
+    },
+    {
+        $project: {
+            employee_id: 1,
+            name: 1,
+            surname: 1,
+            email: 1,
+            phone: 1,
+            feedings: "$feedings.feedings"
+        }
+    }
+])
+
+// 5. Select all of the employees and list their role and specialization.
+db.employee.aggregate([
+    {
+        $unwind: "$role"
+    },
+    {
+        $project: {
+            employee_id: 1,
+            name: 1,
+            surname: 1,
+            role_name: "$role.role_name",
+            specialization: "$role.animals_specialization",
+            security_level: "$role.security_level",
+            emergency_role: "$role.emergency_role"
+        }
+    }
+])
+
+// 6. Select empty enclosures
+
+db.section.aggregate([
+    {$unwind: "$enclosures"},
+    {
+        $lookup: {
+            from: "animal",
+            let: {enclosure_id: "$enclosures.enclosure_id"},
+            pipeline: [
+                {$match: {$expr: {$eq: ["$enclosure", "$$enclosure_id"]}}}
+            ],
+            as: "animal_enc"
+        }
+    },
+        {
+        $project: {
+            enclosure_id: "$enclosures.enclosure_id",
+            animals_in_enc: "$animal_enc"
+        }
+    },
+    {
+        $match: {"animals_in_enc": { $size: 0 }}
+    },
+    {
+        $sort: {enclosure_id: 1}
+    }
+])
+
+// 7.  Determine the occupancy percentage of each enclosure, comparing the number of animals present to its total capacity, and orders the results from highest to lowest percentage of utilization.
+
+
+// 8. Select all Mammals that were fed at least once.
+
+
+// 9. Select all of the enclosures in the zoo which were guarded by security guards with Advanced security level.
