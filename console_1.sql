@@ -1,4 +1,5 @@
 // 1. Select all the employees that work as zoo keepers. Display their animal specialization and information.
+// This query was automatically translated by the DataGrip from the SQL query.
 db.getSiblingDB("annadanc").getCollection("employee").aggregate([
   {
     $match: {"role.role_name": {$eq: "zoo_keeper"}}
@@ -162,9 +163,54 @@ db.section.aggregate([
 ])
 
 // 7.  Determine the occupancy percentage of each enclosure, comparing the number of animals present to its total capacity, and orders the results from highest to lowest percentage of utilization.
+db.animal.aggregate([
 
+])
 
 // 8. Select all Mammals that were fed at least once.
 
 
 // 9. Select all of the enclosures in the zoo which were guarded by security guards with Advanced security level.
+
+// 10. Count how many times each employee had a shift in each section.
+
+// 11. Select all Mammals that were fed at least once.
+
+// 12. Select all of the animals in the zoo that both have animal parents in the zoo and godparents (sponsors).
+// This query provides the same output as in the SQL database, however, it was decided to add a field with an array of godparents sponsoring
+db.animal.aggregate([
+    {$lookup: { // Join animal and godparent tables
+        from: "godparent",
+        localField: "animal_id",
+        foreignField: "sponsored_animal.animal_id",
+        as: "godparent_animal_match"
+    }},
+    {$match: {
+            "parents.animal_parent_id": {$ne: null, $not: {$size: 0}},
+            "godparent_animal_match": {$ne: null, $not: {$size: 0}}
+        }
+    },
+    {$unwind: "$godparent_animal_match"},
+
+    {
+    $group: {
+            _id: "$animal_id", // grouping key
+            birth_date: {$first: "$birth_date"},
+            name: {$first: "$name"},
+            sex: {$first: "sex"},
+            enclosure: {$first: "enclosure"},
+            species_binominal_name: {$first: "$species_binominal_name"},
+            sponsoring_godparents: { $push: "$godparent_animal_match.godparent_id" }}
+    },
+    {
+        $project: {
+            animal_id: 1,
+            birth_date: 1,
+            species_binominal_name: 1,
+            name: 1,
+            sex: 1,
+            enclosure: 1,
+            sponsoring_godparents: 1
+        }
+    }
+])
