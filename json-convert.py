@@ -15,11 +15,14 @@ def read_all_json_files(folder_path):
     return data
 
 def transform_date_to_iso(date_string):
-    # Assuming the date format is 'YYYY-MM-DD'
     date_obj = datetime.strptime(date_string, '%Y-%m-%d')
     return {"$date": date_obj.isoformat(timespec="milliseconds") + "Z"}
 
 
+def transform_timestamp_to_iso(date_string):
+    date_obj = datetime.strptime(date_string, '%Y-%m-%d %H:%M:%S.%f')
+    iso_format_date = date_obj.isoformat(timespec="milliseconds") + "Z"
+    return {"$date": iso_format_date}
 # Usage
 data = read_all_json_files("Tables-JSON")
 
@@ -37,10 +40,12 @@ def get_filtered_data(filter_key, filter_value, data, attributes):
     if filtered_data:
         return filtered_data
 
+
 ### TRANSFORM ANIMAL DATA ###
 def transform_animal_data(animals_data, parent_child_data, feedings_data):
     transformed_data = []
     for animal in animals_data:
+        feedings_retrieved_data = get_filtered_data("animal_id", animal["animal_id"], feedings_data, ["employee_id", "timestamp"])
         transformed_animal = {
             "animal_id": animal["animal_id"], # Adding animal_id so we can reference conviniently 
             "sex": animal["sex"],
@@ -49,13 +54,18 @@ def transform_animal_data(animals_data, parent_child_data, feedings_data):
             "enclosure": animal["enclosure_id"],
             "species_binominal_name": animal["binominal_name"],
             "parents": get_filtered_data("animal_id", animal["animal_id"], parent_child_data, ["animal_parent_id", "parenting_type"]),
-            "feedings":  get_filtered_data("animal_id", animal["animal_id"], feedings_data, ["employee_id", "timestamp"])
+            "feedings": [
+                {
+                    "employee_id": feeding["employee_id"],
+                    "timestamp": transform_timestamp_to_iso(feeding["timestamp"])
+                } for feeding in feedings_retrieved_data
+            ] if feedings_retrieved_data else None
         }
         transformed_data.append(transformed_animal)
     return transformed_data
 
 transformed_animals = transform_animal_data(animals_data, parent_child_data, feedings_data)
-#print(transformed_animals)
+print(transformed_animals)
 
 
 ### TRANSFORM GODPARENT DATA ###
@@ -148,7 +158,7 @@ def transform_section_data(section_data, enclosure_data, security_shifts_data):
     return transformed_data
 
 transformed_section = transform_section_data(section_data, enclosure_data, security_shifts_data)
-print(transformed_section)
+#print(transformed_section)
 
 for_export = [transformed_godparent, transformed_animals, transformed_employee, transformed_section]
 export_names = ["godparent", "animal", "employee", "section"]
