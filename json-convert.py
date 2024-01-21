@@ -14,6 +14,12 @@ def read_all_json_files(folder_path):
                 data[key] = json.load(json_file)
     return data
 
+def transform_date_to_iso(date_string):
+    # Assuming the date format is 'YYYY-MM-DD'
+    date_obj = datetime.strptime(date_string, '%Y-%m-%d')
+    return {"$date": date_obj.isoformat(timespec="milliseconds") + "Z"}
+
+
 # Usage
 data = read_all_json_files("Tables-JSON")
 
@@ -35,11 +41,10 @@ def get_filtered_data(filter_key, filter_value, data, attributes):
 def transform_animal_data(animals_data, parent_child_data, feedings_data):
     transformed_data = []
     for animal in animals_data:
-        year, month, day = animal["birth_date"].split("-")
         transformed_animal = {
             "animal_id": animal["animal_id"], # Adding animal_id so we can reference conviniently 
             "sex": animal["sex"],
-            "birth_date": {"$date": bson.datetime.datetime(int(year), int(month), int(day)).isoformat(timespec="milliseconds") + "Z"} ,
+            "birth_date": transform_date_to_iso(animal["birth_date"]),
             "name": animal["name"],
             "enclosure": animal["enclosure_id"],
             "species_binominal_name": animal["binominal_name"],
@@ -133,13 +138,17 @@ def transform_section_data(section_data, enclosure_data, security_shifts_data):
         transformed_section = {
             "section_name": entry["section_name"],
             "enclosures": get_filtered_data("section_name", entry["section_name"], enclosure_data, ["enclosure_id", "capacity", "type_name"]),
-            "security_shifts": get_filtered_data("section_name", entry["section_name"], security_shifts_data, ["employee_id", "date"])
-        }
+            "security_shifts": [
+                {"employee_id": shift["employee_id"], 
+                "date": transform_date_to_iso(shift["date"])
+                } for shift in get_filtered_data("section_name", entry["section_name"], security_shifts_data, ["employee_id", "date"])
+            ]       
+            }
         transformed_data.append(transformed_section)
     return transformed_data
 
 transformed_section = transform_section_data(section_data, enclosure_data, security_shifts_data)
-#print(transformed_section)
+print(transformed_section)
 
 for_export = [transformed_godparent, transformed_animals, transformed_employee, transformed_section]
 export_names = ["godparent", "animal", "employee", "section"]
