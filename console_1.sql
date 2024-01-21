@@ -223,8 +223,30 @@ db.animal.aggregate([
 // 9. Select all of the enclosures in the zoo which were guarded by security guards with Advanced security level.
 
 // 10. Count how many times each employee had a shift in each section.
+// The results of the query are not particularly same as in the SQL database, as the query does not display the shift count
+// for the section if the count is 0.
+db.section.aggregate([
+    {$unwind: "$security_shifts"},
+    {$group: {
+        _id: {employee_id: "$security_shifts.employee_id",
+            section_name: "$section_name"},
+        shifts_count: {$sum: 1}
+    }},
+    {
+        $project: {
+            _id: 0, // excluding the _id field
+            employee_id: "$_id.employee_id",
+            section_name: "$_id.section_name",
+            shifts_count: 1
+        }
+    },
+    {
+        $sort: {"employee_id": 1}
+    }
+])
 
-// 11. Select all Mammals that were fed at least once.
+// 11.
+
 
 // 12. Select all of the animals in the zoo that both have animal parents in the zoo and godparents (sponsors).
 // This query provides the same output as in the SQL database, however, it was decided to add a field with an array of godparents sponsoring
