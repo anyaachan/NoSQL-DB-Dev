@@ -155,7 +155,7 @@ db.section.aggregate([
         }
     },
     {
-        $match: {"animals_in_enc": { $size: 0 }}
+        $match: {"animals_in_enc": {$size: 0}}
     },
     {
         $sort: {enclosure_id: 1}
@@ -163,12 +163,62 @@ db.section.aggregate([
 ])
 
 // 7.  Determine the occupancy percentage of each enclosure, comparing the number of animals present to its total capacity, and orders the results from highest to lowest percentage of utilization.
-db.animal.aggregate([
-
+// The query produces the same results as SQL query.
+db.section.aggregate([
+    {
+    $unwind: "$enclosures"
+    },
+    {
+        $lookup: {
+            from: "animal",
+            localField: "enclosures.enclosure_id",
+            foreignField: "enclosure",
+            as: "animals_in_enc"
+        }
+    },
+    {
+        $project: {
+            enclosure_id: "$enclosures.enclosure_id",
+            animal_count: { $size: "$animals_in_enc" },
+            capacity: "$enclosures.capacity",
+            occupancy_percentage: {
+                $round: [
+                    {$multiply: [
+                        {$divide: [{$size: "$animals_in_enc"}, "$enclosures.capacity"]},
+                        100
+                    ]
+                }, 0
+                ]
+            }
+        }
+    },
+    {
+        $sort: {occupancy_percentage: -1}
+    }
 ])
 
 // 8. Select all Mammals that were fed at least once.
-
+// The query returns the same results as the SQL query.
+db.animal.aggregate([
+    {$unwind: "$feedings"},
+    {
+        $lookup: {
+            from: "employee",
+            localField: "feedings.employee_id",
+            foreignField: "employee_id",
+            as: "employee_info"
+        }
+    },
+    {$match: {"employee_info.role.animals_specialization": "Mammals"}},
+    {
+        $group: {
+            _id: "$animal_id",
+            name: {$first: "$name"},
+            enclosure: {$first: "$enclosure"},
+            species_binominal_name: {$first: "$species_binominal_name"},
+        }
+    }
+])
 
 // 9. Select all of the enclosures in the zoo which were guarded by security guards with Advanced security level.
 
@@ -191,7 +241,6 @@ db.animal.aggregate([
         }
     },
     {$unwind: "$godparent_animal_match"},
-
     {
     $group: {
             _id: "$animal_id", // grouping key
@@ -200,7 +249,7 @@ db.animal.aggregate([
             sex: {$first: "sex"},
             enclosure: {$first: "enclosure"},
             species_binominal_name: {$first: "$species_binominal_name"},
-            sponsoring_godparents: { $push: "$godparent_animal_match.godparent_id" }}
+            sponsoring_godparents: {$push: "$godparent_animal_match.godparent_id"}}
     },
     {
         $project: {
