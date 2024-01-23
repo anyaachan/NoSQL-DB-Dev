@@ -56,3 +56,50 @@ db.createCollection("animal", {
    }
 } );
 
+db.createCollection("section", {
+   validator: {
+      $jsonSchema: {
+         title: "Order object validator",
+         required: ["section_name"],
+         properties: {
+                "enclosures": {
+                    anyOf: [
+                        {bsonType: "array"},
+                        {bsonType: "null"}
+                    ],
+                    required: ["enclosuree_id", "capacity", "type_name"],
+                    properties: {
+                        "enclosure_id": {
+                            bsonType: "int"
+                        },
+                        "capacity": {
+                            bsonType: "int",
+                            "minimum": 1 // should be greater than 0
+                        },
+                        "type_name": {
+                            bsonType: "string"
+                        }
+                    }
+                },
+                "section_name": {
+                    bsonType: "string"
+                },
+                "security_shifts": {
+                    anyOf: [
+                        {bsonType: "array"},
+                        {bsonType: "null"}
+                    ],
+                    required: ["employee_id", "date"],
+                    properties: {
+                        "date": {
+                            bsonType: "date"
+                        },
+                        "employee_id": {
+                            bsonType: "int"
+                        }
+                    }
+                }
+         }
+      }
+   }
+} );

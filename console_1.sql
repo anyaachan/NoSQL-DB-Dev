@@ -358,7 +358,122 @@ db.animal.aggregate([
 ])
 
 // 13. Select animals that were only fed by Olivia and not by any other zoo keeper.
+// The query returns the same results as SQL query
+db.animal.aggregate([
+    {
+        $lookup: {
+            from: "employee",
+            localField: "feedings.employee_id",
+            foreignField: "employee_id",
+            as: "feeding_employees"
+        }
+    },
+    {
+        $match: {
+            "feeding_employees.name": "Olivia"
+        }
+    },
+    {
+        $project: {
+            animal_id: 1,
+            name: 1,
+            species_binominal_name: 1,
+            sex: 1,
+            birth_date: 1,
+            fed_only_by_olivia: {
+                $eq: [
+                    {$size: {$filter: {input: "$feeding_employees", as: "emp", cond: {$eq: ["$$emp.name", "Olivia"]}}}},
+                    {$size: "$feeding_employees"}
+                ]
+            }
+        }
+    },
+    {
+        $match: {
+            fed_only_by_olivia: true
+        }
+    },
+    {
+        $project: {
+            fed_only_by_olivia: 0
+        }
+    },
+
+])
+
 
 // 14. Select IDs of the security guards that had a shift in each section.
+// NoSQL query returns the same results as SQL query
+db.section.aggregate([
+    {$unwind: "$security_shifts"},
+    {$group: {
+        _id: {employee_id: "$security_shifts.employee_id",
+            section_name: "$section_name"},
+        shifts_count: {$sum: 1}
+    }},
+    {
+        $project: {
+            _id: 0, // excluding the _id field
+            employee_id: "$_id.employee_id",
+            section_name: "$_id.section_name",
+            shifts_count: 1
+        }
+    },
+    {
+        $group: {
+            _id: "$employee_id",
+            section_name_count: {$sum: 1}
+        }
+    },
+    {
+        $match: {"section_name_count": 6}
+    },
+    {
+        $sort: {"_id": 1}
+    },
+    {
+        $project: {
+            section_name_count: 0
+        }
+    }
+])
 
 // 15. Calculate the number of different species in each section, ordering sections by the count of unique species from highest to lowest.
+// The query returns the same results as SQL query.
+db.animal.aggregate([
+    {
+        $lookup: {
+            from: "section", // Assuming this collection maps enclosures to sections
+            localField: "enclosure",
+            foreignField: "enclosures.enclosure_id",
+            as: "section_data"
+        }
+    },
+    {
+        $unwind: "$section_data"
+    },
+    {
+        $group: {
+            _id: {
+                section_name: "$section_data.section_name",
+                species: "$species_binominal_name"
+            }
+        }
+    },
+    {
+        $group: {
+            _id: "$_id.section_name",
+            unique_species_count: { $sum: 1 }
+        }
+    },
+    {
+        $sort: { unique_species_count: -1 }
+    },
+    {
+        $project: {
+            section_name: "$_id",
+            unique_species_count: 1,
+            _id: 0
+        }
+    }
+])
