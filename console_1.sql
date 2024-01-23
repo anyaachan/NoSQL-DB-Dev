@@ -199,9 +199,40 @@ db.animal.aggregate([
 ])
 
 // 9. Select all of the enclosures in the zoo which were guarded by security guards with Advanced security level.
+// The query outputs the same results as the SQL query.
 db.employee.aggregate([
+    {
+        $match: {
+            "role.security_level": "Advanced"
+        }
+    },
+    {
+        $lookup: {
+            from: "section",
+            localField: "employee_id",
+            foreignField: "security_shifts.employee_id",
+            pipeline: [
+                {$unwind: "$enclosures"}
+            ],
+            as: "sections_info"
+        }
+    },
+    {
+        $unwind: "$sections_info"
+    },
 
+    {
+        $project: {
+            enclosure_id: "$sections_info.enclosures.enclosure_id",
+            section_name: "$sections_info.section_name",
+            _id: 0 // exclude the _id field
+        }
+    },
+    {
+        $sort: {"enclosure_id": 1}
+    }
 ])
+
 
 // 10. Count how many times each employee had a shift in each section.
 // The results of the query are not particularly same as in the SQL database, as the query does not display the shift count
