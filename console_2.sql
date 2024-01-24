@@ -37,7 +37,7 @@ db.createCollection("animal", {
                         ]
                 },
                 "parents.parenting_type": {
-                    enum: ['Biological', 'Adoptive'],
+                    enum: ["Biological", "Adoptive"],
                     description: "Must be one of the following: 'Biological', 'Adoptive'"
                 },
                 "feedings": {
@@ -48,7 +48,7 @@ db.createCollection("animal", {
                     required: ["timestamp", "employee_id"]
                 },
                 "sex": {
-                    enum: ['M', 'F'],
+                    enum: ["M", "F"],
                     description: "Must be one of the following: 'M', 'F'"
                 }
          }
@@ -98,6 +98,121 @@ db.createCollection("section", {
                             bsonType: "int"
                         }
                     }
+                }
+         }
+      }
+   }
+} );
+
+
+db.createCollection("employee", {
+   validator: {
+      $jsonSchema: {
+         title: "Order object validator",
+         required: ["phone", "email", "employee_id", "name", "surname", "role"],
+         properties: {
+                "role": {
+                    bsonType: "object",
+                    required: ["role_name"],
+                    properties: {
+                        "role_name": {
+                            bsonType: "string",
+                            enum: ["zoo_keeper", "security_guard"]
+                        },
+                        "animals_specialization": {
+                            anyOf: [
+                                {bsonType: "string"},
+                                {bsonType: "null"}
+                            ],
+                            enum: ["Mammals",
+                                    "Birds",
+                                    "Reptiles",
+                                    "Amphibians",
+                                    "Fish"]
+                        },
+                        "security_level": {
+                            anyOf: [
+                                {bsonType: "string"},
+                                {bsonType: "null"}
+                            ],
+                            enum: ["Entry",
+                                    "Intermediate",
+                                    "Advanced"]
+                        },
+                        "emergency_role": {
+                            anyOf: [
+                                {bsonType: "string"},
+                                {bsonType: "null"}
+                            ]
+                        },
+                    }
+                },
+                "surname": {
+                    bsonType: "string"
+                },
+                "name": {
+                    bsonType: "string"
+                },
+                "email": {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+                },
+                "phone": {
+                    bsonType: "string"
+                },
+                "employee_id": {
+                    bsonType: "int"
+                },
+         }
+      }
+   }
+} );
+
+
+db.createCollection("godparent", {
+   validator: {
+      $jsonSchema: {
+         title: "Order object validator",
+         required: ["godparent_id", "primary_contact", "name"],
+         properties: {
+                "sponsored_animal": {
+                    anyOf: [
+                        {bsonType: "array"},
+                        {bsonType: "null"}
+                    ],
+                    required: ["animal_id", "donation_amount", "donation_period"],
+                    properties: {
+                        "donation_period": {
+                            bsonType: "int"
+                        },
+                        "donation_amount": {
+                            bsonType: "int"
+                        },
+                        "animal_id": {
+                            bsonType: "int"
+                        }
+                    }
+                },
+                "name": {
+                    bsonType: "string"
+                },
+                "godparent_id": {
+                    bsonType: "int"
+                },
+                "primary_contact": {
+                    bsonType: "string"
+                },
+                "surname": {
+                    anyOf: [
+                        {bsonType: "string"},
+                         {bsonType: "null"}
+                    ]
+                },
+                "secondary_contact": {
+                    anyOf: [
+                        {bsonType: "string"},
+                         {bsonType: "null"}
+                    ]
                 }
          }
       }

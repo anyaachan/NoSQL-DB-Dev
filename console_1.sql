@@ -1,24 +1,34 @@
 // 1. Select all the employees that work as zoo keepers. Display their animal specialization and information.
+// The query returns the same results as SQL query.
+// It is important to note that this is the only query where method can be used.
 db.employee.find({"role.role_name": "zoo_keeper"},
-                 {employee_id: 1, "animals_specialization": "$role.animals_specialization", name: 1, surname: 1, phone: 1, email: 1, _id: 0})
+                 {employee_id: 1, "animals_specialization": "$role.animals_specialization",
+                 name: 1,
+                 surname: 1,
+                 phone: 1,
+                 email: 1,
+                 _id: 0}) // excluding the id from the output
 
 
 //2. Select all animals that were not fed on December 2, 2023, by checking the absence of a corresponding feeding record on that date.
+// The query returns the same results as SQL query.
 db.animal.aggregate([
     {
-        $project: {
-            animal_id: 1,  // select the following fields
+        $project: {   // select the following fields
+            animal_id: 1,
             name: 1,
             enclosure: 1,
-            feedings: 1,
+            sex: 1,
+            birth_date: 1,
             feedings_on_date: { // select all the feeding on december 2, 2023 and put them into the new field
                 $filter: {
                     input: "$feedings", // array to filter
                     as: "feeding", // each element is referred to as feeding
                     cond: { // condition to filter
-                        $eq: [ // check the equality
-                            {$dateToString: {format: "%Y-%m-%d", date: { $dateFromString: { dateString: "$$feeding.timestamp"}}}},
-                            "2023-12-02"]
+                        $eq: [ // filter for only timestamps with 2023-12-02 as a date
+                            { $dateToString: { format: "%Y-%m-%d", date: "$$feeding.timestamp" } },
+                            "2023-12-02"
+                        ]
                     }
                 }
             }
@@ -31,25 +41,30 @@ db.animal.aggregate([
                 {"feedings": {$eq: null }}
             ]
         }
+    },
+    {
+        $project: {
+            feedings_on_date: 0 // remove feedings_on_date from the results
+        }
     }
 ])
 
 // 3. Select all animals that reside in the Africa section. In addition to the animal information, output the Enclosure Type and Enclosure ID of each enclosure associated with an animal that resides in the Africa section.
-
+// The query returns the same results as SQL query.
 db.animal.aggregate([
     {
         $lookup: { // perform a join
-            from: "section",
+            from: "section", // join with
             let: {animal_enclosure: "$enclosure"},
             pipeline: [
                 {$unwind: "$enclosures"}, // deconstruct the array
                 {$match: {$expr: {$eq: ["$enclosures.enclosure_id", "$$animal_enclosure"]}}}, // $expr allows to use $eq expression inside the $match statement
-                {$match: {section_name: "Africa"}}
+                {$match: {section_name: "Africa"}} // select only africa section
             ],
             as: "section_data"
         }
     },
-    {$unwind: "$section_data"}, // filter out the documents with empty arrays
+    {$unwind: "$section_data"}, // filter out the documents with empty arrays by deconstructing
     {
         $project: {
             animal_id: 1,
@@ -59,7 +74,8 @@ db.animal.aggregate([
             birth_date: 1,
             enclosure_id: "$enclosure",
             enc_type: "$section_data.enclosures.type_name",
-            section_name: "$section_data.section_name"
+            section_name: "$section_data.section_name",
+            _id: 0
         }
     },
     {$sort: {"animal_id": 1}}
