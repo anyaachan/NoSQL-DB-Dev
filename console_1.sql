@@ -82,6 +82,7 @@ db.animal.aggregate([
 ])
 
 // 4. Select all zoo keepers that never fed any animal.
+// The query produces the same results as SQL query
 db.employee.aggregate([
     {
         $lookup: {
@@ -104,13 +105,14 @@ db.employee.aggregate([
             surname: 1,
             email: 1,
             phone: 1,
-            feedings: "$feedings.feedings"
+            _id: 0
         }
     }
 ])
 
 
 // 5. Select all of the employees and list their role and specialization.
+// The query produces the same results as the SQL query, however also displaying columns that are not necessary for selected role
 db.employee.aggregate([
     {
         $unwind: "$role"
@@ -120,6 +122,9 @@ db.employee.aggregate([
             employee_id: 1,
             name: 1,
             surname: 1,
+            phone: 1,
+            email: 1,
+            _id: 0,
             role_name: "$role.role_name",
             specialization: "$role.animals_specialization",
             security_level: "$role.security_level",
@@ -129,7 +134,7 @@ db.employee.aggregate([
 ])
 
 // 6. Select empty enclosures
-
+// The query produces the same results as the SQL query
 db.section.aggregate([
     {$unwind: "$enclosures"},
     {
@@ -145,7 +150,11 @@ db.section.aggregate([
         {
         $project: {
             enclosure_id: "$enclosures.enclosure_id",
-            animals_in_enc: "$animal_enc"
+            animals_in_enc: "$animal_enc",
+            section_name: 1,
+            capacity: "$enclosures.capacity",
+            type_name: "$enclosures.type_name"
+
         }
     },
     {
@@ -153,6 +162,11 @@ db.section.aggregate([
     },
     {
         $sort: {enclosure_id: 1}
+    },
+    {
+        $project: {
+            animals_in_enc: 0
+        }
     }
 ])
 
@@ -279,6 +293,8 @@ db.section.aggregate([
     //FROM godparent g
     //INNER JOIN animal ON g.sponsored_animal.animal_id = animal.animal_id
     //INNER JOIN employee e ON e.employee_id = animal.feedings.employee_id;
+
+// The query outputs the same results as the SQL query
 
 db.getSiblingDB("annadanc").getCollection("godparent").aggregate([
   {

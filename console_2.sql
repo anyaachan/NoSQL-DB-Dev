@@ -22,7 +22,8 @@ db.createCollection("animal", {
                         {bsonType: "null"}],
                 },
                 "binominal_name": {
-                    bsonType: "string"
+                    bsonType: "string",
+                    maxLength: 75
                 },
                 "birth_date": {
                     anyOf: [
@@ -155,10 +156,13 @@ db.createCollection("employee", {
                 },
                 "email": {
                     bsonType: "string",
+                    maxLength: 254,
                     pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
                 },
                 "phone": {
-                    bsonType: "string"
+                    bsonType: "string",
+                    maxLength: 15,
+                    minLength: 7
                 },
                 "employee_id": {
                     bsonType: "int"
