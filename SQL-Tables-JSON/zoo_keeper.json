@@ -1,0 +1,30 @@
+[
+  {
+    "employee_id": 1,
+    "animals_specialization": "Mammals"
+  },
+  {
+    "employee_id": 2,
+    "animals_specialization": "Birds"
+  },
+  {
+    "employee_id": 3,
+    "animals_specialization": "Reptiles"
+  },
+  {
+    "employee_id": 4,
+    "animals_specialization": "Amphibians"
+  },
+  {
+    "employee_id": 5,
+    "animals_specialization": "Fish"
+  },
+  {
+    "employee_id": 6,
+    "animals_specialization": "Mammals"
+  },
+  {
+    "employee_id": 7,
+    "animals_specialization": "Birds"
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "employee_id": 1,
+    "name": "Alice",
+    "surname": "Johnson",
+    "phone": "555-1234",
+    "email": "alice.j@example.com"
+  },
+  {
+    "employee_id": 2,
+    "name": "Bob",
+    "surname": "Smith",
+    "phone": "555-5678",
+    "email": "bob.s@example.com"
+  },
+  {
+    "employee_id": 3,
+    "name": "Emma",
+    "surname": "Williams",
+    "phone": "555-6789",
+    "email": "emma.w@example.com"
+  },
+  {
+    "employee_id": 4,
+    "name": "James",
+    "surname": "Brown",
+    "phone": "555-7890",
+    "email": "james.b@example.com"
+  },
+  {
+    "employee_id": 5,
+    "name": "Liam",
+    "surname": "Wilson",
+    "phone": "555-8901",
+    "email": "liam.w@example.com"
+  },
+  {
+    "employee_id": 6,
+    "name": "Olivia",
+    "surname": "Taylor",
+    "phone": "555-9012",
+    "email": "olivia.t@example.com"
+  },
+  {
+    "employee_id": 7,
+    "name": "Noah",
+    "surname": "Anderson",
+    "phone": "555-0123",
+    "email": "noah.a@example.com"
+  },
+  {
+    "employee_id": 8,
+    "name": "Charlie",
+    "surname": "Brown",
+    "phone": "555-9101",
+    "email": "charlie.b@example.com"
+  },
+  {
+    "employee_id": 9,
+    "name": "Diana",
+    "surname": "Prince",
+    "phone": "555-1122",
+    "email": "diana.p@example.com"
+  },
+  {
+    "employee_id": 10,
+    "name": "Lucas",
+    "surname": "Miller",
+    "phone": "555-2233",
+    "email": "lucas.m@example.com"
+  },
+  {
+    "employee_id": 11,
+    "name": "Sophia",
+    "surname": "Davis",
+    "phone": "555-3344",
+    "email": "sophia.d@example.com"
+  },
+  {
+    "employee_id": 12,
+    "name": "Mia",
+    "surname": "Harris",
+    "phone": "555-4455",
+    "email": "mia.h@example.com"
+  },
+  {
+    "employee_id": 13,
+    "name": "Ethan",
+    "surname": "Clark",
+    "phone": "555-5566",
+    "email": "ethan.c@example.com"
+  }
+]

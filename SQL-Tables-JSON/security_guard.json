@@ -1,0 +1,32 @@
+[
+  {
+    "employee_id": 8,
+    "security_level": "Intermediate",
+    "emergency_role": "Fire Safety"
+  },
+  {
+    "employee_id": 9,
+    "security_level": "Entry",
+    "emergency_role": "First Aid"
+  },
+  {
+    "employee_id": 10,
+    "security_level": "Advanced",
+    "emergency_role": "Crisis Management"
+  },
+  {
+    "employee_id": 11,
+    "security_level": "Intermediate",
+    "emergency_role": "Surveillance"
+  },
+  {
+    "employee_id": 12,
+    "security_level": "Entry",
+    "emergency_role": "Public Relations"
+  },
+  {
+    "employee_id": 13,
+    "security_level": "Intermediate",
+    "emergency_role": "Emergency Evacuation"
+  }
+]
