@@ -1,6 +1,6 @@
 
 # Directory containing JSON files
-DIRECTORY="/Users/anna-alexandradanchenko/Documents/University/Second Year/Rel&NoSQL/python_scripts/JSON-transformed"
+DIRECTORY="/Users/anna-alexandradanchenko/Documents/University/SecondYear/RelNoSQL/python_scripts/JSON-transformed"
 
 # Iterate over each file in the directory
 for FILE in "$DIRECTORY"/*
