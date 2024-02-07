@@ -5,7 +5,7 @@ The source PostgreSQL database presents a zoo management system, and its schema 
 
 ## Migration Approach
 
-The migration process is structured in the following way: 
+The main goal of the migration was to **automatize** as many processes as possible. The migration process is structured in the following way: 
 
 1. **Data Model Rethink**: The initial step involved changing the data model to comply with MongoDB database design principles. The revised NoSQL data model visualization is available in the [assets](assets) folder for review.
 ![structure](https://github.com/anyaachan/NoSQL-DB-Dev/assets/53533713/b62afd00-36dc-4451-8d40-cd595c3b483f)
@@ -14,3 +14,6 @@ The migration process is structured in the following way:
 3. **Data Transformation**: The exported JSON files were then transformed using a [Python script](json-convert.py) to match the NoSQL data model. This transformation resulted in four JSON documents ready for import into MongoDB.
 4. **JSON Schema Validation**: To maintain the integrity, consistency and safety of the data within the MongoDB database, the [JSON Schema Validation](create-script.sql) was set up.
 5. **Database Population**: Using the [Bash script](bash-script.sh) along with **mongoimport** tool, the transformed JSON populates the MongoDB database with data.
+
+## Specifics and Considerations
+- To simplify the database transfer process, additional ID fields were included alongside the _id field for each collection. For instance, fields such as _animal_id_, _employee_id_, and others were transferred from the SQL database and are designed to assist in referencing the documents.
